@@ -41,6 +41,7 @@ Follow these steps meticulously:
 *   Git commit.
 *   Create folder `./WingthpToys-Core`
 *   Use `dotnet` cli to create the new project in `./WingthpToys-Core`
+*   Git commit.
 *   Pick one feature from `./gemini-docs/features.md`. Pick foundational functions first. 
 *   Search all of the feature-related code from the old codebase and analysis the implementation, business logic, validation logic, etc.
 *   Implement the unit tests that verify the business logic / validation logic from the legacy codebase. This step is the Red of Red-Green-Refactor.
