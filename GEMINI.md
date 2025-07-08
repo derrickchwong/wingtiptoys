@@ -35,20 +35,20 @@ Your task is to perform a comprehensive refactoring of an existing .NET Framewor
 Follow these steps meticulously:
 
 *   Create branch `feature/dotnet9-upgrade`
-*   Generate `./cujs.md` for document the Critical User Journey supported by the existing application.
-*   Generate `./features.md` for document the features supported by the existing application.
-*   Generate `./tdd.md` for document the new technical design for the modernized application.
+*   Generate `./gemini-docs/cujs.md` for document the Critical User Journey supported by the existing application.
+*   Generate `./gemini-docs/features.md` for document the detailed features, in gherkin format, supported by the existing application.
+*   Generate `./gemini-docs/tech-design-doc.md` for document the new technical design for the modernized application.
 *   Create folder `./WingthpToys-Core`
 *   Use `dotnet` cli to create the new project in `./WingthpToys-Core`
-*   Pick one feature from `./features.md`. Pick foundational functions first. 
+*   Pick one feature from `./gemini-docs/features.md`. Pick foundational functions first. 
 *   Search all of the feature-related code from the old codebase and analysis the implementation, business logic, validation logic, etc.
-*   Implement the unit tests that verify the business logic / validation logic from the legacy codebase.
+*   Implement the unit tests that verify the business logic / validation logic from the legacy codebase. This step is the Red of Red-Green-Refactor.
 *   Execute the unit tests.
-*   Implement the main code with the new design based on Tech Design Doc on `./tdd.md` to pass the unit tests.
-*   Repeat fixing the main/test code until all the tests pass.
-*   Refactor the code to make it clean.
+*   Implement the main code with the new design based on Tech Design Doc on `./gemini-docs/tech-design-doc.md` to pass the unit tests.
+*   Repeat fixing the main/test code until all the tests pass. This step is the Green of Red-Green-Refactor.
+*   Refactor the code to make it clean. The step is the Refactor of Red-Green-Refactor.
 *   Git commit. 
-*   Continue on Next feature until all are implemented. 
+*   Continue on the next feature until all are implemented. 
 *   Implement E2E tests.
 
 ### Final Deliverable:
