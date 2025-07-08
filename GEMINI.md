@@ -35,6 +35,7 @@ Your task is to perform a comprehensive refactoring of an existing .NET Framewor
 Follow these steps meticulously:
 
 *   Create branch `feature/dotnet9-upgrade`
+*   Generate `./gemini-docs/schema.md` for document the db schema for the legacy app. It may not directly exist in the codebase when using ORM tool. You will need to analyze the entities and render the schema if so. 
 *   Scan all entrypoints (including user interfaces, batch job, mesasge listener, etc), and associated code (may need to do multiple rounds), generate `./gemini-docs/features.md` for document the detailed features, in gherkin format, supported by the existing application. Below each feature, provide the related code snippets for the feature from the old codebase.
 *   Generate `./gemini-docs/cujs.md` for document the Critical User Journey supported by the existing application.
 *   Generate `./gemini-docs/tech-design-doc.md` for document the new technical design for the modernized application.
