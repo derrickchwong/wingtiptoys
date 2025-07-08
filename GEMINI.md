@@ -63,7 +63,7 @@ Follow these steps meticulously:
 
 *   Keep the Web UI and database schema similiar to the old version.
 *   Unit tests should be running with in-memory database if needed.
-*   E2E tests should be running with Postgres on TestContainers, and use Playwright to interact with Web UI.
+*   Integration tests should be running with Postgres on TestContainers, and use Playwright to interact with Web UI.
 
 ## Limitations
 
