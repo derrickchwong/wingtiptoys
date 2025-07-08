@@ -65,6 +65,7 @@ Follow these steps meticulously:
 *   Keep the Web UI and database schema similiar to the old version.
 *   Unit tests should be running with in-memory database if needed.
 *   Integration tests should be running with Postgres on TestContainers, and use Playwright to interact with Web UI.
+*   Verify with tests, you do not need to actually 'run' the app. 
 
 ## Limitations
 
