@@ -42,13 +42,14 @@ Follow these steps meticulously:
 *   Use `dotnet` cli to create the new project in `./WingthpToys-Core`
 *   Pick one feature from `./features.md`. Pick foundational functions first. 
 *   Search all of the feature-related code from the old codebase and analysis the implementation, business logic, validation logic, etc.
-*   Implement the test code that verify the business logic / validation logic from the legacy codebase.
-*   Execute the tests.
-*   Implement the main code to pass the tests with the new framework based on Tech Design Doc on `./tdd.md`
+*   Implement the unit tests that verify the business logic / validation logic from the legacy codebase.
+*   Execute the unit tests.
+*   Implement the main code with the new design based on Tech Design Doc on `./tdd.md` to pass the unit tests.
 *   Repeat fixing the main/test code until all the tests pass.
 *   Refactor the code to make it clean.
-*   Git commit when feature is verified. 
+*   Git commit. 
 *   Continue on Next feature until all are implemented. 
+*   Implement E2E tests.
 
 ### Final Deliverable:
 
@@ -59,7 +60,9 @@ Follow these steps meticulously:
 
 ### Other requirements:
 
-*   Keep the Web UI and database schema similiar to the old version
+*   Keep the Web UI and database schema similiar to the old version.
+*   Unit tests should be running with in-memory database if needed.
+*   E2E tests should be running with Postgres on TestContainers, and use Playwright to interact with Web UI.
 
 ## Limitations
 
