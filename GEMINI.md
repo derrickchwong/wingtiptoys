@@ -38,6 +38,7 @@ Follow these steps meticulously:
 *   Generate `./gemini-docs/cujs.md` for document the Critical User Journey supported by the existing application.
 *   Generate `./gemini-docs/features.md` for document the detailed features, in gherkin format, supported by the existing application.
 *   Generate `./gemini-docs/tech-design-doc.md` for document the new technical design for the modernized application.
+*   Git commit.
 *   Create folder `./WingthpToys-Core`
 *   Use `dotnet` cli to create the new project in `./WingthpToys-Core`
 *   Pick one feature from `./gemini-docs/features.md`. Pick foundational functions first. 
@@ -48,8 +49,7 @@ Follow these steps meticulously:
 *   Repeat fixing the main/test code until all the tests pass. This step is the Green of Red-Green-Refactor.
 *   Refactor the code to make it clean. The step is the Refactor of Red-Green-Refactor.
 *   Git commit. 
-*   Continue on the next feature until all are implemented. 
-*   Implement E2E tests.
+*   Wait for user instruction. 
 
 ### Final Deliverable:
 
