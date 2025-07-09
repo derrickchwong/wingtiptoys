@@ -42,8 +42,8 @@ Your first goal is to deeply understand the legacy application and produce clear
     * **Deliverable**: `./gemini-docs/1-database-schema.md`
 2.  **Architecture Documentation**: Document the legacy application's architecture using C4 model diagrams rendered with Mermaid syntax. Generate diagrams for System Context, Containers, Components and code. Be comprehensive.
     * **Deliverable**: `./gemini-docs/2-c4-architecture.md`
-3.  **Feature Specification**: Scan all application entry points (UI controllers, API endpoints, background jobs, etc.) to identify all features. Document these features in Gherkin format (`Given/When/Then`). Below each feature, include the relevant legacy code snippets including frontend and backend code.
-    * **Deliverable**: `./gemini-docs/3-feature-specifications.md`
+3.  **Feature Specification**: Scan all application entry points (UI controllers, API endpoints, background jobs, etc.) to identify all features. For each feature, create a separate markdown file in a new `features` directory. Each file will document the feature in Gherkin format (`Given/When/Then`) and include the relevant legacy code snippets for both frontend and backend.
+    * **Deliverable**: A directory at `./gemini-docs/3-features/` containing individual markdown files for each identified feature (e.g., `view-product-details.md`, `add-product-to-cart.md`).
 4.  **Technical Design for Modernization**: Based on your analysis, create a technical design document for the new .NET 9 application. This document should outline the new project structure, key libraries (e.g., ASP.NET Core Razor Pages, EF Core, xUnit, Playwright, TestContainers), architectural patterns, and the database migration strategy to Postgres.
     * **Deliverable**: `./gemini-docs/4-technical-design.md`
 5.  **Commit & Pause**: Commit all generated documentation to Git with the message `docs: Analyze legacy application and propose modern design`. Then, wait for my instruction to proceed.
@@ -58,13 +58,13 @@ Your first goal is to deeply understand the legacy application and produce clear
 
 You will now migrate the application one feature at a time, following a strict TDD workflow. Start with foundational features before moving to more complex ones.
 
-For each feature selected from `./gemini-docs/3-feature-specifications.md`:
+For each feature documented in the `./gemini-docs/3-features/` directory:
 
-1.  **Declare Intent**: State which feature you will be implementing next.
-2.  **RED**: In the **unit test project**, write tests that capture the business logic, validation rules, and expected outcomes. These tests must fail initially.
+1.  **Declare Intent**: State which feature you will be implementing next by referencing its file name.
+2.  **RED**: In the **unit test project**, write tests that capture the business logic, validation rules, and expected outcomes defined in the feature file. These tests must fail initially.
 3.  **GREEN**: Write the simplest, cleanest implementation code in the main project (following your new design) required to make the failing unit tests pass.
 4.  **REFACTOR**: Improve the structure and clarity of your new code and tests without changing their external behavior. Ensure everything aligns with modern .NET best practices (dependency injection, async/await, etc.).
-5.  **Commit & Pause**: Commit the work for the completed feature with a message (e.g., `feat(TDD): Implement product catalog display feature`). Summarize what you've learnt during the process, including key findings, anything to avoid, etc, and use the memory tool to save it. **Then, stop and await my instruction.** You can proceed with the next feature or move to integration testing. 
+5.  **Commit & Pause**: Commit the work for the completed feature with a message (e.g., `feat(TDD): Implement product catalog display feature`). Summarize what you've learnt during the process, including key findings, anything to avoid, etc, and use the memory tool to save it. **Then, stop and await my instruction.** You can proceed with the next feature or move to integration testing.
 
 ### **Phase 4: End-to-End Verification with Integration Tests**
 
