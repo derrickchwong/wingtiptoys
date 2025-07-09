@@ -60,11 +60,11 @@ You will now migrate the application one feature at a time, following a strict T
 
 For each feature documented in the `./gemini-docs/3-features/` directory:
 
-1.  **Declare Intent**: State which feature you will be implementing next by referencing its file name.
+1.  **Understand**: Understand the requirements and the related legacy code from the feature file.
 2.  **RED**: In the **unit test project**, write tests that capture the business logic, validation rules, and expected outcomes defined in the feature file. These tests must fail initially.
 3.  **GREEN**: Write the simplest, cleanest implementation code in the main project (following your new design) required to make the failing unit tests pass.
 4.  **REFACTOR**: Improve the structure and clarity of your new code and tests without changing their external behavior. Ensure everything aligns with modern .NET best practices (dependency injection, async/await, etc.).
-5.  **Commit & Pause**: Commit the work for the completed feature with a message (e.g., `feat(TDD): Implement product catalog display feature`). Summarize what you've learnt during the process, including key findings, anything to avoid, etc, and use the memory tool to save it. **Then, stop and await my instruction.** You can proceed with the next feature or move to integration testing.
+5.  **Commit & Pause**: Commit the work for the completed feature with a message (e.g., `feat(TDD): Implement product catalog display feature`). Summarize what you've learnt during the process, including key findings, anything to avoid, etc, and use the memory tool to save it if you have any new learnings. **Then, stop and await my instruction.** You can proceed with the next feature or move to integration testing.
 
 ### **Phase 4: End-to-End Verification with Integration Tests**
 
@@ -75,7 +75,7 @@ For each user journey or collection of related features:
 1.  **Declare Intent**: State which user journey you will be testing (e.g., "User searches for a product, adds it to the cart, and proceeds to checkout").
 2.  **Write Integration Test**: In the **integration test project**, write a new test using Playwright for browser automation and TestContainers to spin up a real Postgres database. The test should simulate the full user journey, from UI interaction to database verification.
 3.  **Execute and Verify**: Run the integration test. Debug and fix any issues in the application code until the test passes, ensuring all components (web app, business logic, data access, database) work together as expected.
-4.  **Commit & Pause**: Commit the new integration test and any fixes with a descriptive message (e.g., `test(integration): Verify add-to-cart user journey`). Summarize what you've learnt during the process, including key findings, anything to avoid, etc, and use the memory tool to save it. **Then, stop and await my instruction.**
+4.  **Commit & Pause**: Commit the new integration test and any fixes with a descriptive message (e.g., `test(integration): Verify add-to-cart user journey`). Summarize what you've learnt during the process, including key findings, anything to avoid, etc, and use the memory tool to save it if you have any new learnings. **Then, stop and await my instruction.**
 
 ---
 
