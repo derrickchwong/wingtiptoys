@@ -42,8 +42,8 @@ Your first goal is to deeply understand the legacy application and produce clear
     * **Deliverable**: `./gemini-docs/1-database-schema.md`
 2.  **Architecture Documentation**: Document the legacy application's architecture using C4 model diagrams rendered with Mermaid syntax. Generate diagrams for System Context, Containers, Components and code. Be comprehensive.
     * **Deliverable**: `./gemini-docs/2-c4-architecture.md`
-3.  **Feature Backlog Creation in Jira**: Scan all application entry points (UI controllers, API endpoints, background jobs, etc.) to identify all user-facing features. For each feature, use the Jira CLI (run the `jira` command to get help on usage) to create a new user story in a "To Do" state. The story description should contain the feature documented in Gherkin format (`Given/When/Then`) and include the relevant legacy code snippets.
-    * **Deliverable**: A list of Jira tickets created (e.g., `WT-1`, `WT-2`), each representing a feature to be migrated. You will present this list for verification.
+3.  **Feature Specification**: Scan all application entry points (UI controllers, API endpoints, background jobs, etc.) to identify all features. For each feature, create a separate markdown file in a new `features` directory. Each file will document the feature in Gherkin format (`Given/When/Then`) and include the relevant legacy code snippets for both frontend and backend.
+    * **Deliverable**: A directory at `./gemini-docs/3-features/` containing individual markdown files for each identified feature (e.g., `view-product-details.md`, `add-product-to-cart.md`).
 4.  **Technical Design for Modernization**: Based on your analysis, create a technical design document for the new .NET 9 application. This document should outline the new project structure, key libraries (e.g., ASP.NET Core Razor Pages, EF Core, xUnit, Playwright, TestContainers), architectural patterns, and the database migration strategy to Postgres.
     * **Deliverable**: `./gemini-docs/4-technical-design.md`
 5.  **Commit & Pause**: Commit all generated documentation to Git with the message `docs: Analyze legacy application and propose modern design`. Then, wait for my instruction to proceed.
@@ -58,15 +58,13 @@ Your first goal is to deeply understand the legacy application and produce clear
 
 You will now migrate the application one feature at a time, following a strict TDD workflow. Start with foundational features before moving to more complex ones.
 
-For each feature migration cycle:
+For each feature documented in the `./gemini-docs/3-features/` directory:
 
-1.  **Select Feature**: Use the `jira` cli to look for feature from the `To Do` list. Announce which ticket you are moving from the `To Do` list to `In Progress` (e.g., `Now starting work on WT-1: View Product List`).
-2.  **Understand**: Understand the requirements and the related legacy code from the feature file.
-3.  **RED**: In the **unit test project**, write tests that capture the business logic, validation rules, and expected outcomes defined in the feature file. These tests must fail initially.
-4.  **GREEN**: Write the simplest, cleanest implementation code in the main project (following your new design) required to make the failing unit tests pass.
-5.  **REFACTOR**: Improve the structure and clarity of your new code and tests without changing their external behavior. Ensure everything aligns with modern .NET best practices (dependency injection, async/await, etc.).
-6.  **Mark as Done & Commit**: First, mark the Jira ticket as `Done` using the `jira` cli. Then, commit the work for the completed feature with a message (e.g., feat(TDD): Implement product catalog display [WT-1]).
-7. **Summarize & Pause**: Summarize what you've learned during the process, including key findings, anything to avoid, etc. Use the memory tool to save any new learnings. Then, stop and await my instruction.
+1.  **Understand**: Understand the requirements and the related legacy code from the feature file.
+2.  **RED**: In the **unit test project**, write tests that capture the business logic, validation rules, and expected outcomes defined in the feature file. These tests must fail initially.
+3.  **GREEN**: Write the simplest, cleanest implementation code in the main project (following your new design) required to make the failing unit tests pass.
+4.  **REFACTOR**: Improve the structure and clarity of your new code and tests without changing their external behavior. Ensure everything aligns with modern .NET best practices (dependency injection, async/await, etc.).
+5.  **Commit & Pause**: Commit the work for the completed feature with a message (e.g., `feat(TDD): Implement product catalog display feature`). Summarize what you've learnt during the process, including key findings, anything to avoid, etc, and use the memory tool to save it if you have any new learnings. **Then, stop and await my instruction.** You can proceed with the next feature or move to integration testing.
 
 ### **Phase 4: End-to-End Verification with Integration Tests**
 
