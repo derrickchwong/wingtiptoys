@@ -1,5 +1,7 @@
 # Legacy .NET Framework Sample App
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/derrickchwong/wingtiptoys)
+
 This repository contains the `WingtipsToys` sample application, a project originally built on the legacy .NET Framework. It serves as a starting point and a case study for modernizing older .NET applications.
 
 ## Modernization with Gemini CLI
