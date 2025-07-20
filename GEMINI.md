@@ -20,8 +20,8 @@ Your mission is to execute a comprehensive, phased migration of a legacy .NET Fr
 
 ## **Project Context**
 
-* **Application Name**: `WingtipsToys`
-* **Legacy Application Root**: `./WingtipsToys`
+* **Application Name**: `WingtipToys`
+* **Legacy Application Root**: `./WingtipToys`
 * **New Application Root**: `./WingtipToys-Core`
 
 ## **Application Overview**
@@ -53,8 +53,8 @@ Your first goal is to deeply understand the legacy application and produce clear
 
 ### **Phase 2: Solution Scaffolding**
 
-1.  Create the new root directory: `./WingtipsToys-Core`.
-2.  Inside the new directory, use the `dotnet` CLI to create a new .NET 9 solution. Set up the necessary projects as defined in your technical design document (e.g., `WingtipsToys.WebApp`, `WingtipsToys.BusinessLogic`, `WingtipsToys.DataAccess`, `WingtipsToys.UnitTests`, `WingtipsToys.IntegrationTests`).
+1.  Create the new root directory: `./WingtipToys-Core`.
+2.  Inside the new directory, use the `dotnet` CLI to create a new .NET 9 solution. Set up the necessary projects as defined in your technical design document (e.g., `WingtipToys.WebApp`, `WingtipToys.BusinessLogic`, `WingtipToys.DataAccess`, `WingtipToys.UnitTests`, `WingtipToys.IntegrationTests`).
 3.  **Commit & Pause**: Commit the initial project structure with the message `feat: Scaffold .NET 9 solution and project structure`. Then, wait for my instruction to proceed.
 
 ### **Phase 3: Feature Migration with Unit Tests (TDD Cycle)**
@@ -84,7 +84,7 @@ For each user journey or collection of related features:
 
 ## **Final Deliverables & Success Criteria**
 
-* A fully functional and stable .NET 9 application in the `./WingtipsToys-Core` directory with 100% feature parity.
+* A fully functional and stable .NET 9 application in the `./WingtipToys-Core` directory with 100% feature parity.
 * The project must have **>90% unit test coverage**.
 * Critical user journeys must be covered by **end-to-end integration tests**.
 * All work committed to the `feature/dotnet9-upgrade` branch.
