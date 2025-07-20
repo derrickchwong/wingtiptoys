@@ -22,7 +22,12 @@ Your mission is to execute a comprehensive, phased migration of a legacy .NET Fr
 
 * **Application Name**: `WingtipsToys`
 * **Legacy Application Root**: `./WingtipsToys`
-* **New Application Root**: `./WingtipsToys-Core`
+* **New Application Root**: `./WingtipToys-Core`
+
+## **Application Overview**
+
+Wingtip Toys is a sample application showcasing a web portal for buying and selling transportation-related toys. It is built as a 3-Tier application, leveraging the .NET Framework with Web Forms and a SQL Server database. The application provides features such as browsing a product catalog, managing a shopping cart, user authentication, and administrative functions for managing products. It serves as a demonstration of building a data-driven web application using Microsoft technologies. The application is designed to be easily deployable to cloud environments like Cloud Foundry, with considerations for handling connection strings and other environment-specific configurations.
+
 
 ---
 
