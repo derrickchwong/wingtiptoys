@@ -41,12 +41,48 @@ You will execute this migration in a structured, phased approach. Do not proceed
 
 Your first goal is to deeply understand the legacy application and produce clear documentation. All generated documents must be placed in a new `./gemini-docs` directory.
 
-1.  **Database Schema Analysis**: Analyze the legacy application's data models (e.g., Entity Framework EDMX or code-first entities) with `search_code` tool with path = `.`, and generate a detailed database schema markdown file.
-    * **Deliverable**: `./gemini-docs/1-database-schema.md`
-2.  **Feature Specification**: Search application entry points (UI controllers, API endpoints, background jobs, etc.) with `search_code` and the dependent services one-by-one to identify features. For each feature, create a separate markdown file in a new `features` directory. Each file will document the feature in Gherkin format (`Given/When/Then`) and include the relevant legacy code snippets for both frontend and backend.
-    * **Deliverable**: A directory at `./gemini-docs/2-features/` containing individual markdown files for each identified feature (e.g., `view-product-details.md`, `add-product-to-cart.md`).
+1.  **Database Schema Analysis**
+
+Your first task is to find the database schema. The schema is the blueprint for how data is stored and is the most reliable source for understanding the core entities of the application.
+
+### Step 1.1: Search for Schema Files
+First, search for common database schema definition files. Execute the following `search_code` calls.
+
+<execute_tool>
+search_code(query='schema.rb', path='.')
+search_code(query='schema.sql', path='.')
+search_code(query='*.prisma', path='.')
+search_code(query='V*.sql', path='db/migration')
+</execute_tool>
+
+**If you find a schema file**, paste its contents and proceed directly to **Section 2**.
+
+### Step 1.2: Find Model/Entity Files (If No Schema File)
+If you did not find a dedicated schema file, the schema is likely defined implicitly through Object-Relational Mapping (ORM) models or entity files. Search for common directories where these are stored.
+
+<execute_tool>
+search_code(query='*.rb', path='app/models')
+search_code(query='*.py', path='*/models')
+search_code(query='*.java', path='src/main/java/*/entity')
+search_code(query='*.ts', path='src/entity')
+search_code(query='*.go', path='pkg/models')
+</execute_tool>
+
+**If you find model/entity files**, list their filenames. Then, for each file, read its content to infer the schema (i.e., the fields, data types, and relationships). Summarize the inferred schema for each model you found.
+
+Save the schema at `./gemini-docs/1-database-schema.md`
+
+## 2. Identify Core Features
+
+Based on the database schema or the models discovered, list the primary entities of the application (e.g., User, Product, Order, Post, Comment). These entities represent the core **features** of the codebase.
+
+Search application entry points (UI controllers, API endpoints, background jobs, etc.) with `search_code` and the dependent services one-by-one to identify features. For each feature, create a separate markdown file in a new `features` directory. Each file will document the feature in Gherkin format (`Given/When/Then`) and include the relevant legacy code snippets for both frontend and backend.
+
+Create a directory at `./gemini-docs/2-features/` containing individual markdown files for each identified feature (e.g., `view-product-details.md`, `add-product-to-cart.md`).
+
 3.  **Technical Design for Modernization**: Based on your analysis, create a technical design document for the new .NET 9 application. This document should outline the new project structure, key libraries (e.g., ASP.NET Core Razor Pages, EF Core, xUnit, Playwright, TestContainers), architectural patterns, and the database migration strategy to Postgres.
     * **Deliverable**: `./gemini-docs/3-technical-design.md`
+    
 4.  **Commit & Pause**: Commit all generated documentation to Git with the message `docs: Analyze legacy application and propose modern design`. Then, wait for my instruction to proceed.
 
 ### **Phase 2: Solution Scaffolding**
