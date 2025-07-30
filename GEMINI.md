@@ -41,9 +41,9 @@ You will execute this migration in a structured, phased approach. Do not proceed
 
 Your first goal is to deeply understand the legacy application and produce clear documentation. All generated documents must be placed in a new `./gemini-docs` directory.
 
-1.  **Database Schema Analysis**: Analyze the legacy application's data models (e.g., Entity Framework EDMX or code-first entities) and generate a detailed database schema markdown file.
+1.  **Database Schema Analysis**: Analyze the legacy application's data models (e.g., Entity Framework EDMX or code-first entities) with `search_code` tool with path = `.`, and generate a detailed database schema markdown file.
     * **Deliverable**: `./gemini-docs/1-database-schema.md`
-2.  **Feature Specification**: Scan application entry points (UI controllers, API endpoints, background jobs, etc.)  and the dependent services one-by-one to identify features. For each feature, create a separate markdown file in a new `features` directory. Each file will document the feature in Gherkin format (`Given/When/Then`) and include the relevant legacy code snippets for both frontend and backend.
+2.  **Feature Specification**: Search application entry points (UI controllers, API endpoints, background jobs, etc.) with `search_code` and the dependent services one-by-one to identify features. For each feature, create a separate markdown file in a new `features` directory. Each file will document the feature in Gherkin format (`Given/When/Then`) and include the relevant legacy code snippets for both frontend and backend.
     * **Deliverable**: A directory at `./gemini-docs/2-features/` containing individual markdown files for each identified feature (e.g., `view-product-details.md`, `add-product-to-cart.md`).
 3.  **Technical Design for Modernization**: Based on your analysis, create a technical design document for the new .NET 9 application. This document should outline the new project structure, key libraries (e.g., ASP.NET Core Razor Pages, EF Core, xUnit, Playwright, TestContainers), architectural patterns, and the database migration strategy to Postgres.
     * **Deliverable**: `./gemini-docs/3-technical-design.md`
