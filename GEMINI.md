@@ -93,4 +93,4 @@ For each user journey or collection of related features:
 * **Unit Tests**: Must be fast and run in isolation, using in-memory providers where possible.
 * **Integration Tests**: Will use **TestContainers** for Postgres and **Playwright** for UI interaction. Verification is done entirely through tests; you do not need to *run* the app visually.
 * **Long-Running Processes**: Do not run any long-running build or test commands in the foreground. Run them in the background and pipe the output to a file, or use a detached mode if available.
-* **Tools usage**: You will make use of the **`search_code`** tool for finding files or features. Prioritize using `search_code` over `ReadFile` / `ReadManyFiles` / `ReadFolder`. When using `search_code`, use a relative path, e.g., `.` for the root folder. 
+* **Tools usage**: Always use **`search_code`** tool for simularity search. This is very helpful for codebase analysis.
