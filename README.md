@@ -1,8 +1,13 @@
-# WingtipToys
-This project is based on Microsoft's "Wingtip Toys Store" demo web portal written as a 3-Tier application leveraging .NET 4.5 with Webforms and SQL Server database for both data and user management. 
+# Legacy .NET Framework Sample App
 
-## Overview
-This application has been slightly modified to allow for optionally using a user provided service for connection string information. Additional changes were made to enable troubleshooting deployments into Cloud Foundry. The base functionality of this app remains unchanged.
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/derrickchwong/wingtiptoys)
 
-### Setup
-A SQL Server connection string is required for the application to run. The application will initialize the database on first run so it is highly recommended that only one instance is used when running the application for the first time using a new uninitialized database.
+This repository contains the `WingtipsToys` sample application, a project originally built on the legacy .NET Framework. It serves as a starting point and a case study for modernizing older .NET applications.
+
+## Modernization with Gemini CLI
+
+This project is an sample for a guided migration to a modern .NET stack. You can use Gemini CLI to automate this process.
+
+### Try it with Gemini CLI
+
+Use the detailed [prompt](GEMINI.md) with the Gemini CLI to begin a structured, test-driven migration of this application. This prompt instructs the AI to act as a senior .NET engineer, analyze the legacy code, generate documentation, and then migrate the application feature-by-feature to .NET 9.
